@@ -9,103 +9,10 @@
     <meta name="subject" content="Procedural Graphics">
     <meta name="copyright" content="Lukas Eibensteiner">
     <meta name="author" content="Lukas Eibensteiner, l.eibensteiner@gmail.com">
+    <link rel="stylesheet" href="index.css"/>
     <script src="regl.min.js"></script>
     <script defer src="lambda.min.js"></script>
     <script defer src="index.js"></script>
-    <style>
-      @font-face {
-        font-family: 'Roboto Slab';
-        font-style: normal;
-        font-weight: 400;
-        font-display: swap;
-        src: url(roboto-slab-latin-ext.woff2) format('woff2');
-        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-      }
-      @font-face {
-        font-family: 'Roboto Slab';
-        font-style: normal;
-        font-weight: 400;
-        font-display: swap;
-        src: url(roboto-slab-latin.woff2) format('woff2');
-        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-      }
-
-      * {
-        font-size: inherit;
-        font-family: inherit;
-        color: inherit;
-        margin: initial;
-        border: initial;
-        background: initial;
-      }
-      html {
-        background: #222;
-        font-size: 20px;
-        font-family: 'Roboto Slab', sans-serif;
-        color: rgba(255, 255, 255, 0.5);
-        overflow: hidden;
-      }
-      body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-      }
-      .tool {
-        z-index: 1;
-        position: absolute;
-      }
-      .header {
-        z-index: 1;
-        position: absolute;
-        top: 1rem;
-        left: 1rem;
-      }
-      .nav {
-        right: 1rem;
-        bottom: 1rem;
-      }
-      .footer {
-        left: 1rem;
-        bottom: 1rem;
-      }
-      .button {
-        background: rgba(255, 255, 255, 0.06);
-        display: inline-block;
-        transition: all 0.2s;
-        padding: 0.5rem;
-        border-radius: 0.25rem;
-        box-sizing: border-box;
-        cursor: pointer;
-        text-transform: uppercase;
-      }
-      .button:hover {
-        color: rgba(255, 255, 255, 0.75);
-        background: rgba(255, 255, 255, 0.12);
-      }
-      #name {
-        font-weight: normal;
-        font-size: 2rem;
-      }
-      #title {
-        font-weight: normal;
-        font-size: 1rem;
-      }
-      #next::after {
-        content: 'Next';
-      }
-      #next:hover::after {
-        content: 'N̶̢͇̹̣̮̟̓̔̋̈̕Ḕ̶̢̘̀̓̅̇͋̽̕X̷̞̯͓̻̖̒T̷̖͈̻͙͆̒̽̍́̂';
-      }
-      #link {
-        position: absolute;
-        right: 1000px;
-      }
-    </style>
   </head>
   <body>
     <canvas id="canvas" class="canvas"></canvas>
