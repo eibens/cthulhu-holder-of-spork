@@ -1,0 +1,32 @@
+{
+  "name": "cthulhu-holder-of-spork",
+  "version": "0.0.1",
+  "homepage": "https://eibens.github.io/cthulhu-holder-of-spork",
+  "description": "Randomly generated cosmic horrors.",
+  "license": "UNLICENSED",
+  "main": "src/index.html",
+  "repository": {
+    "url": "https://github.com/eibens/cthulhu-holder-of-spork",
+    "type": "git"
+  },
+  "author": {
+    "url": "https://github.com/eibens",
+    "email": "l.eibensteiner@gmail.com",
+    "name": "Lukas Eibensteiner"
+  },
+  "scripts": {
+    "clean": "del-cli dist/**/*",
+    "prebuild": "npm run clean",
+    "build": "parcel build ./src/index.html",
+    "serve": "parcel serve src/index.html",
+    "deploy": "npm run build && gh-pages -d dist"
+  },
+  "devDependencies": {
+    "del-cli": "^3.0.1",
+    "gh-pages": "^3.1.0",
+    "parcel": "^1.12.4",
+    "parcel-plugin-static-files-copy": "^2.4.3",
+    "regl": "^1.6.1",
+    "typeface-roboto-slab": "^1.1.4"
+  }
+}

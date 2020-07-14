@@ -5,14 +5,11 @@
     <meta name="viewport" content="width=device-width"/>
     <title>Cthulhu, Holder of Spork</title>
     <meta name="keywords" content="generator, procedural, grammar, hp lovecraft, eldritch horror, cosmic horror, old one, lovecraft, eye, graphics, webgl, lambda"/>
-    <meta name="description" content="A disembodied eye, large as a galaxy, with an ever-changing iris and a black hole pupil."/>
+    <meta name="description" content="A disembodied eye, large as a galaxy, with a colorful iris and a black hole pupil."/>
     <meta name="subject" content="Procedural Graphics">
     <meta name="copyright" content="Lukas Eibensteiner">
     <meta name="author" content="Lukas Eibensteiner, l.eibensteiner@gmail.com">
     <link rel="stylesheet" href="index.css"/>
-    <script src="regl.min.js"></script>
-    <script defer src="lambda.min.js"></script>
-    <script defer src="index.js"></script>
   </head>
   <body>
     <canvas id="canvas" class="canvas"></canvas>
@@ -27,5 +24,16 @@
       <button id="copy" class="button">Copy Link</button>
       <input id="link" title="Link"/>
     </footer>
+    <script>
+      // manually inject static lambda.min.js library
+      const script = document.createElement('script')
+      script.src = 'lambda.min.js'
+      document.body.replaceChild(script, document.currentScript)
+      script.addEventListener('load', () => {
+        Object.assign(window, Lambda.init({log: console.log}))
+        window.dispatchEvent(new CustomEvent('custom-ready'))
+      })
+    </script>
+    <script defer src="index.js"></script>
   </body>
 </html>
