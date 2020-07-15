@@ -1,4 +1,4 @@
-> hi every1 im very ancient!!!!!!! holds up spork my name is cthulhu but u can call me t̷̞̽3̴̞͛h̶̝̋ ̶͖̃H̶̪͘o̵͔͂Ḽ̶̋d̵̟͠3̴̬͑R̷̯̈́ ̵̎ͅo̵̙͒F̵̱͗ ̴̡́s̸̤̕P̵͚̓o̸͓̿R̵̹̓k̸̞̕!!!!!!! lol…as u can see im very random!!!!
+> hi every1 im old!!!!!!! \*holds up spork\* my name is cthulhu but u can call me t̷̜͚̾3̴̰̎̆ḥ̵̛̈́ ̶̠̆Ǒ̷̰̹̅c̵͔̓̈́7̶̫͌ỏ̶̥P̷͎̓͜u̵͍͗͂S̸̤͂ ̵͉̇̚o̵̘͆͠F̶͈̏̌ ̸̰̣͊̚d̷͕̼̋0̵̡͖́͝0̵̧̫͌́m̴̖͙̄!!!!!!!! lol…as u can see im very random!!!!
 >
 > -- <cite>Cthulhu, Holder of Spork</cite>
 
@@ -8,9 +8,9 @@ The Old Ones are returning, and they are *craaaazy*. They have taken the form of
 
 ## Background
 
-This was a small side-project strung together over the weekend. It is build on top of a procedural generation library I am currently developing. The library comes with a [declarative DSL](src/grammar.js) originally built for music generation, but it is apparently general enough to allow basic graphics and text generation. This sound like a good thing, but could be a bad thing since a high level of generality means a low level of specificity and consequently less power for particular domains. Nevertheless, I am still exploring.
+This was a small side-project strung together over the weekend. It is build on top of a procedural generation library I am currently developing. The library comes with a [declarative DSL](src/grammar.js) originally built for music generation, but it is apparently general enough to allow basic graphics and text generation. This sounds like a good thing, but could be a bad thing since a high level of generality means a low level of specificity and consequently less power for particular domains. Maybe it's a spork.
 
-The original idea for generating these eyeballs came from a bug. I intended to make a polar visualization and wanted to test it with random points for a `triangle fan` primitive. I had switched on `triangles` instead, and this resulted in random triangles around the center of the coordinate system. Increasing the number of points led to a shape that looked like an iris (my dad first saw that resemblance). One thing led to another and this website was created.
+The original idea for generating these eyeballs came from a bug. I intended to make a polar visualization and wanted to test it with random points for a `triangle fan` primitive. I had switched on `triangles` instead and instead of a polygon I got separate random triangles around the center of the coordinate system. Increasing the number of points led to a shape that looked like an iris (my dad first saw that resemblance). One thing led to the next and this website was created.
 
 ## Screenshots
 
