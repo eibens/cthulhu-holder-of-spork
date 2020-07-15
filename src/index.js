@@ -10,18 +10,23 @@ const gui = {
   link: document.getElementById('link')
 }
 
+const fit = (w, h) => w > h
+  ? [h / w, 1]
+  : [1, w / h]
+
 const regl = Regl(gui.canvas)
 const draw = regl({
   // language=GLSL
   vert: `
     #define PI 3.1415926535897932384626433832795
     attribute vec2 vertex;
+    uniform vec2 ratio;
     void main (void) {
       float a = vertex.x * 2.0 * PI;
       float r = vertex.y;
       float x = r * cos(a);
       float y = r * sin(a);
-      gl_Position = vec4(x, y, 0.0, 1.0);
+      gl_Position = vec4(ratio * vec2(x, y), 0.0, 1.0);
     }
   `,
   // language=GLSL
@@ -35,7 +40,11 @@ const draw = regl({
   `,
   uniforms: {
     color: regl.prop('color'),
-    alpha: regl.prop('alpha')
+    alpha: regl.prop('alpha'),
+    ratio: ctx => fit(
+      ctx.viewportWidth,
+      ctx.viewportHeight
+    )
   },
   attributes: {
     vertex: regl.prop('vertex')
@@ -55,9 +64,9 @@ const draw = regl({
   viewport: {
     x: 0,
     y: 0,
-    width: regl.prop('size'),
-    height: regl.prop('size')
-  },
+    width: () => regl._gl.canvas.width,
+    height: () => regl._gl.canvas.height
+  }
 })
 
 let scene = {}
@@ -65,10 +74,8 @@ let scene = {}
 const render = () => {
   const domSize = Math.min(window.innerWidth, window.innerHeight)
   const size = domSize * window.devicePixelRatio
-  gui.canvas.style.width = domSize + 'px'
-  gui.canvas.style.height = domSize + 'px'
-  gui.canvas.width = size
-  gui.canvas.height = size
+  gui.canvas.width = window.innerWidth * window.devicePixelRatio
+  gui.canvas.height = window.innerHeight * window.devicePixelRatio
   regl.clear({color: [...scene.color, 1]})
   scene.shapes.forEach(s => draw({...s, size}))
   const rgb = scene.color.map(x => Math.round(x * 255)).join(', ')
