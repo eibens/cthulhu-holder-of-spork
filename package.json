@@ -17,7 +17,7 @@
   "scripts": {
     "clean": "del-cli dist/**/*",
     "prebuild": "npm run clean",
-    "build": "parcel build ./src/index.html",
+    "build": "parcel build --public-url ./ ./src/index.html",
     "serve": "parcel serve src/index.html",
     "deploy": "npm run build && gh-pages -d dist"
   },
