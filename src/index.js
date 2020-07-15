@@ -83,7 +83,7 @@ const update = hash => {
   document.title = scene.name + ', ' + scene.title
   gui.name.innerText = scene.name
   gui.title.innerText = scene.title
-  gui.link.value = 'https://lambda.website/cthulhu-holder-of-spork/#' + scene.name
+  gui.link.value = window.location
   render()
 }
 
