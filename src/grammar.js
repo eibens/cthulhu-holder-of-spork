@@ -19,6 +19,32 @@ const eq = y => lambda(x =>
   evaluate(x) === y
 )
 
+const DOER = [
+  'Eater',
+  'Consumer',
+  'Pillager',
+  'Ravager',
+  'Destroyer',
+  'Corrupter',
+  'Tainter',
+  'Torturer',
+  'Executioner',
+  'Inquisitor',
+  'Enslaver',
+  'Master',
+  'Tyrant'
+]
+
+const THING = [
+  'Dreams',
+  'the Void',
+  'Dimensions',
+  'the Unseen',
+  'Shadows',
+  'the Deep',
+  'Death'
+]
+
 module.exports = name => evaluate(root, pipe(
   set.name(name ? [name] : pipe(
     pick(
@@ -41,14 +67,7 @@ module.exports = name => evaluate(root, pipe(
   set.name(lambda(x => x.name.join(''))),
   seed(get.name),
 
-  set.title(fork(
-    pick('Eater', 'Consumer', 'Pillager', 'Ravager', 'Destroyer', 'Corrupter',
-      'Tainter', 'Torturer', 'Executioner', 'Inquisitor', 'Enslaver', 'Master', 'Tyrant'),
-    ' of ',
-    pick('Worlds', 'Souls', 'Minds', 'Brains', 'Planets', 'Stars', 'Universes',
-      'Galaxies', 'Dreams', 'the Void', 'Dimensions', 'the Unseen', 'Shadows',
-      'the Deep', 'Death')
-  )),
+  set.title(fork(pick(DOER), ' of ', pick(THING))),
   set.title(lambda(x => x.title.join(''))),
 
   set.color(times(3), uniform(0.1, 0.2)),
